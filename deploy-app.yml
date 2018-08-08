@@ -1,6 +1,6 @@
 ---
 - name: Deploy application using docker
-  hosts: app
+  hosts: myapp
   gather_facts: False
 
   tasks:

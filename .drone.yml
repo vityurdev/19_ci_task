@@ -20,8 +20,7 @@ pipeline:
     commands:
       - mkdir -p ~/.ssh/
       - echo -n "$SSH_KEY" >> ~/.ssh/id_rsa_app && chmod 600 ~/.ssh/id_rsa_app
-      - cp ./deploy/vars/credentials-template.yml ./deploy/vars/credentials.yml
-      - cd ./deploy && ./bin/drone-deploy-production.sh
+      - ./deploy-app.sh --private-key ~/.ssh/id_rsa_app --extra-vars "docker_registry_username=$DOCKER_USERNAME docker_registry_password=$DOCKER_PASSWORD docker_registry_email=$DOCKER_EMAIL"
     when:
       branch: ["master"]
       event: [push]

@@ -8,8 +8,8 @@ pipeline:
     tags:
       - latest
       - ${DRONE_BRANCH}
-    dockerfile: ./api/Dockerfile
-    context: ./api/
+    dockerfile: ./Dockerfile
+    context: ./
     when:
       branch: ["master", "production"]
       event: [push]

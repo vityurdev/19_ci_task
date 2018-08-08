@@ -14,12 +14,12 @@
       docker_image:
         state: present
         force: yes
-        name: vityurdev/drone-demo:latest
+        name: vityurdev/drone-repo-demo:latest
 
     - name: run docker container
       docker_container:
         name: drone-demo-app
-        image: vityurdev/drone-demo:latest
+        image: vityurdev/drone-repo-demo:latest
 
         state: started
         restart_policy: always

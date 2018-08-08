@@ -4,7 +4,7 @@ pipeline:
     secrets: [ docker_username, docker_password ]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    repo: vityurdev/drone_repo_demo
+    repo: vityurdev/drone-repo-demo
     tags:
       - latest
       - ${DRONE_BRANCH}
